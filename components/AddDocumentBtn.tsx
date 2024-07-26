@@ -1,10 +1,21 @@
+'use client';
 import React from 'react'
+import { Button } from './ui/button'
+import Image from 'next/image'
 
-const AddDocumentBtn = () => {
+const AddDocumentBtn = ({userId,email}: AddDocumentBtnProps) => {
+  const addDocumentHandler =async()=>{
+
+  }
   return (
-    <div>
-      AddDocument
-    </div>
+    <Button className=' gradient-blue flex gap-1 shadow-md' type='submit' onClick={addDocumentHandler}>
+      <Image src='/assets/icons/add.svg' alt='add button'
+      width={24}
+      height={24}/>
+      <p className='hidden sm:block'>
+        Start a blank document
+      </p>
+    </Button>
   )
 }
 
