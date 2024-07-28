@@ -4,6 +4,7 @@ import React from 'react'
 import Header from './Header';
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs';
 import { Editor } from './editor/Editor';
+import ActiveCollaborators from './ActiveCollaborators';
 
 const CollaborativeRoom = () => {
   return (
@@ -15,12 +16,15 @@ const CollaborativeRoom = () => {
             <p className=' document-title'>Share</p>
             {/* this title should be dynamic at present this is hardcoded */}
           </div>
+          <div className=' flex w-full flex-1 justify-end gap-2 sm:gap-3'>
+            <ActiveCollaborators/>
           <SignedOut>
             <SignInButton />
           </SignedOut>
           <SignedIn>
             <UserButton />
           </SignedIn>
+          </div>
           
         </Header>
         <Editor />
